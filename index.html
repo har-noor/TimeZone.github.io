@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IST to EST</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color :lavender;
+        font-size: 20px;
+    }
+
+    .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  background: #86249c;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #000000;
+  text-decoration: none;
+}
+</style>
+<body>
+
+    <h1 id = "heading">
+
+    </h1>
+
+    <form name="form">
+        <Label>Enter time B town time</Label> <input id = "est" name = "est" type = "datetime-local" >    </form>
+       <!--<input type = "submit" value = "Convert To India Time" >--> 
+       <br><br>
+        <button class = "btn" onclick="convert()">Convert</button>
+    <br><br>
+    <div id = "output">
+
+    </div> 
+    <div id = "output2">
+
+    </div><br><br><br>
+    <img src="images/clock.png">
+
+    <script>
+        document.getElementById("heading").innerHTML = ("Time Zone Converter");
+        var output = document.getElementById("output");
+        var output2 = document.getElementById("output2");
+
+        function convert ()
+        {
+            let d = new Date(document.form.est.value);
+            let estHours = d.getHours();
+            let istHours = d.setHours(estHours + 10);
+            let estMin = d.getMinutes();
+            let istMin = d.setMinutes(estMin + 30);
+           
+            
+            output2.innerHTML = "IST time is  ---  " + d.toString().slice(16,24);
+        }
+        
+    </script>
+</body>
+</html>
